@@ -24,13 +24,11 @@
         document.body.innerHTML = "<p>Missing post ID</p>";
         return;
       }
-
       // Construct deep link
       const deepLink = "showofff://post/" + postId;
 
       // Try to open the app
       window.location = deepLink;
-
       // Fallback based on platform
       setTimeout(function () {
         if (isAndroid()) {
