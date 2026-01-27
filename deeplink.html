@@ -19,8 +19,8 @@
     }
 
     function openApp() {
-      const articleId = getQueryParam("id");
-      if (!articleId) {
+      const postId = getQueryParam("id");
+      if (!postId) {
         document.body.innerHTML = "<p>Missing post ID</p>";
         return;
       }
