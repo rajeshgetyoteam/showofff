@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Show Offf</title>
+  <script type="text/javascript">
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function openApp() {
+      const articleId = getQueryParam("id");
+      if (!articleId) {
+        document.body.innerHTML = "<p>Missing post ID</p>";
+        return;
+      }
+
+      // Construct deep link
+      const deepLink = "showOfff://post/" + postId;
+
+      // Try to open the app
+      window.location = deepLink;
+
+      // Fallback based on platform
+      setTimeout(function () {
+        if (isAndroid()) {
+          // Redirect to Google Play Store
+          window.location = "https://play.google.com/store/apps/details?id=com.princess.showofff";
+        } else if (isIOS()) {
+          // Redirect to Apple App Store (replace with your actual App Store link)
+          window.location = "https://apps.apple.com/us/app/show-offf/id1514453840";
+        } else {
+          // If unknown, go to a landing page or website
+          window.location = "https://showofff.io";
+        }
+      }, 1500);
+    }
+
+    window.onload = openApp;
+  </script>
+</head>
+<body>
+  <p>Redirecting to Show Offf App...</p>
+</body>
+</html>
+
+
+
+
