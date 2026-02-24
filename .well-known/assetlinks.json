@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.princess.showofff",
+      "sha256_cert_fingerprints": [
+        "5E:1C:FD:33:CF:01:95:2B:0D:19:AD:68:0E:B8:62:BD:4A:41:82:EC:56:E8:68:A3:16:83:18:3F:F9:14:EB:E9"
+      ]
+    }
+  }
+]
